@@ -14,5 +14,9 @@
     "Javascript_Avanzado"
   ],
   "author": "DEVF G19A",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "nodemon": "^2.0.20"
+  }
 }
