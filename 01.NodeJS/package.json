@@ -4,6 +4,10 @@
   "description": "instalar nuestro primer paquete nodemon",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
+    "dev": "",
+    "serve": "",
+    "deploy": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
