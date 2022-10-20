@@ -1,0 +1,26 @@
+{
+  "name": "01.nodejs",
+  "version": "1.0.0",
+  "description": "instalar nuestro primer paquete nodemon",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "",
+    "serve": "",
+    "deploy": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "NodeJS",
+    "Git",
+    "Bash",
+    "Nodemon",
+    "Javascript_Avanzado"
+  ],
+  "author": "DEVF G19A",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "nodemon": "^2.0.20"
+  }
+}
