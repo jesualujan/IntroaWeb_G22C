@@ -13,13 +13,13 @@
     <main>
         <article>
             <div>
-                <button></button>
+                <button onclick="anterior()">Anterior</button>
             </div>
             <div>
                 <input id="fecha" type="date" onchange="cambiarImagen()">
             </div>
             <div>
-                <button></button>
+                <button onclick="siguiente()">Siguiente</button>
             </div>
         </article>
         <article>
@@ -28,6 +28,28 @@
                 <h2 id="titulo"></h2>
                 <p id="texto"></p>
             </section>
+        </article>
+        <article>
+            <h2>Asteroides</h2>
+            <label>Fecha de Inicio</label>
+            <input id="fechaInicioAsteroides" type="date" >
+            <label>Fecha de Fin</label>
+            <input id="fechaFinAsteroides" type="date" >
+            <button onclick="consultarAsteroides()">Consultar</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                        <th>Velocidad</th>
+                        <th>Laboratorio</th>
+                    </tr>
+                </thead>
+                <tbody id="infoTabla">
+                    Esperando Request...
+                </tbody>
+            </table>
         </article>
     </main>
 </body>
