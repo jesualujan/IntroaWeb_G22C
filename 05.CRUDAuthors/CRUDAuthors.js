@@ -60,11 +60,24 @@ const URI = 'https://goodreads-devf-aaron.herokuapp.com/api/v1/authors/'
     }
 
 
+//? PARTIAL UPDATE DE UN AUTOR 
 
+    const patchAuthor = (id, jsonData) => {
+        const objConfig = {
+            url: URI+id+'/',
+            form: jsonData
+        }
 
-
-
-
+        request.patch(objConfig,(error,response,body)=>{
+            //validamos nuestra petición
+            if(response.statusCode === 200){
+                const patchAuthor = JSON.parse(body)
+                console.log("ACTUALIZACIÓN COMPLETA: "+"\n",patchAuthor)
+            }else{
+                console.log("UPS! ALGO SALIO MAL ", response.statusCode, response.statusMessage)
+            }                                         //! 404                NOT FOUND (xk la ruta está mal)
+        })                                            //! 400                BAD REQUEST (opción no valida)
+    }
 
 
 
@@ -72,7 +85,8 @@ const URI = 'https://goodreads-devf-aaron.herokuapp.com/api/v1/authors/'
 
 
     module.exports = {
-        getAuthors,
-        getAuthor,
-        createAuthor
+        getAuthors, 
+        getAuthor, 
+        createAuthor, 
+        patchAuthor
     }
