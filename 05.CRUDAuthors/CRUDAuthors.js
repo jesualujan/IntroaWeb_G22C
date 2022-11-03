@@ -79,14 +79,23 @@ const URI = 'https://goodreads-devf-aaron.herokuapp.com/api/v1/authors/'
         })                                            //! 400                BAD REQUEST (opción no valida)
     }
 
-
-
-
+//* ELIMINAR UN AUTOR
+const deleteAuthor = (id)  => {
+    request.delete(URI+id+'/' , (error,response,body)=>{
+        //validamos nuestra petición
+        if(response.statusCode === 204){
+            console.log("EL AUTOR FUE ELIMINADO EXITOSAMENTE")
+        }else{
+            console.log(response.statusCode,response.statusMessage)
+        }                 //! 404                NOT FOUND
+    })
+}
 
 
     module.exports = {
         getAuthors, 
         getAuthor, 
         createAuthor, 
-        patchAuthor
+        patchAuthor,
+        deleteAuthor
     }
