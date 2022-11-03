@@ -16,7 +16,7 @@ const URI = 'https://goodreads-devf-aaron.herokuapp.com/api/v1/authors/'
         request.get(URI , (error,response,body) => {
             //validamos nuestra petición
             if(response.statusCode === 200){
-                const authors = JSON.parse(body) 
+                const authors = JSON.parse(body) // el objeto json convertirlo a un obj de javascript
                 console.log(authors)
             }else {
                console.log(response.statusCode, response.statusMessage)  
@@ -24,9 +24,37 @@ const URI = 'https://goodreads-devf-aaron.herokuapp.com/api/v1/authors/'
         })
     }
 
+//? LISTAR UN AUTOR POR SU ID 
+
+    const getAuthor = (id) => {
+        request.get(URI+id+'/', (error,response,body) =>{
+            //validamos nuestra petición
+            if(response.statusCode === 200){
+                const author = JSON.parse(body) 
+                console.log(author)
+            }else{
+                console.log(response.statusCode, response.statusMessage)
+            }                 //!  404                  Not Found
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     module.exports = {
-        getAuthors
+        getAuthors,
+        getAuthor
     }
