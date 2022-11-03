@@ -38,9 +38,26 @@ const URI = 'https://goodreads-devf-aaron.herokuapp.com/api/v1/authors/'
         })
     }
 
+ //? CREAR UN AUTOR - USAMOS UN OBJETO CON IFORMACIÓN/DATA A CREAR Y PARA ELLO NECESITAMOS 
+ //? USAR UN FORMATO JSON  
+ 
+    const createAuthor = (jsonData) => {
+        const objConfig = {
+            url: URI, //APARTADO PARA CREAR EL AUTOR /api/v1/authors/
+            form: jsonData // ESTA ES MI DATA EN FORMATO JSON 
+        }
 
-
-
+        request.post(objConfig , (error,response,body) => {
+            //validamos nuestra petición
+            if(response.statusCode === 201){
+                const createAuthor = JSON.parse(body)
+                console.log("AUTOR CREADO CON ÉXITO: " + "\n", createAuthor)
+            }else{
+                console.log(response.statusCode, response.statusMessage)
+            }                  //! 404                NOT FOUND (xk la ruta está mal)
+                               //! 400                BAD REQUEST (opción no valida)
+        })
+    }
 
 
 
@@ -56,5 +73,6 @@ const URI = 'https://goodreads-devf-aaron.herokuapp.com/api/v1/authors/'
 
     module.exports = {
         getAuthors,
-        getAuthor
+        getAuthor,
+        createAuthor
     }
